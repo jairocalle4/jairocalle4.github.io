@@ -1,0 +1,275 @@
+/* Basic Resets and Body Styles */
+:root {
+    --primary-color: #4CAF50; /* A vibrant green for health */
+    --secondary-color: #66BB6A;
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --bg-light: #f9f9f9;
+    --bg-dark: #333;
+    --border-color: #ddd;
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-light);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adjust padding for header specifically */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    color: var(--light-text-color);
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x600/4CAF50/FFFFFF?text=Bienestar+Hoy') no-repeat center center/cover; /* Placeholder image */
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #5cb85c;
+}
+
+/* Articles Preview Section */
+.articles-preview, .about-us {
+    padding: 60px 0;
+    text-align: center;
+    background: #fff;
+}
+
+.articles-preview h3, .about-us h3 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.article-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.article-card-content {
+    padding: 20px;
+}
+
+.article-card h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.article-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.article-card .read-more {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.article-card .read-more:hover {
+    color: var(--secondary-color);
+}
+
+/* About Us Section */
+.about-us p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+footer .social-links a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr; /* Stack articles on smaller screens */
+    }
+
+    .articles-preview h3, .about-us h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .article-card h4 {
+        font-size: 1.3em;
+    }
+}
